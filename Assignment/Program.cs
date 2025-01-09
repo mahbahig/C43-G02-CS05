@@ -66,9 +66,15 @@ namespace Assignment
             #endregion
 
             #region Q7
-            Console.Write("Enter the number you want: ");
-            int num = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Factorial of {num} is: {getFactorial(num)}");
+            //Console.Write("Enter the number you want: ");
+            //int num = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Factorial of {num} is: {getFactorial(num)}");
+            #endregion
+
+            #region Q8
+            string word = "Mahmoud";
+            string newWord = changeChar(word, 3, 'a');
+            Console.WriteLine(newWord);
             #endregion
         }
 
@@ -165,14 +171,23 @@ namespace Assignment
         #endregion
 
         #region Q7
-        static int getFactorial(int num)
+        //static int getFactorial(int num)
+        //{
+        //    int result = 1;
+        //    for (int i = 0; i < num; i++)
+        //    {
+        //        result = result * (i + 1);
+        //    }
+        //    return result;
+        //}
+        #endregion
+
+        #region Q8
+        static string changeChar(string word, int index, char newChar)
         {
-            int result = 1;
-            for (int i = 0; i < num; i++)
-            {
-                result = result * (i + 1);
-            }
-            return result;
+            char[] chars = word.ToCharArray();
+            chars[index] = newChar;
+            return new string(chars);
         }
         #endregion
     }

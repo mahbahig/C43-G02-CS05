@@ -57,12 +57,18 @@ namespace Assignment
             #endregion
 
             #region Q6
-            int[] numbers = { 1,8,5,7,3,9,8,7,2 };
-            int[] minMax = getMinMax(numbers);
+            //int[] numbers = { 1,8,5,7,3,9,8,7,2 };
+            //int[] minMax = getMinMax(numbers);
 
-            Console.WriteLine($"Min: {minMax[0]}");
-            Console.WriteLine($"Max: {minMax[minMax.Length-1]}");
+            //Console.WriteLine($"Min: {minMax[0]}");
+            //Console.WriteLine($"Max: {minMax[minMax.Length-1]}");
 
+            #endregion
+
+            #region Q7
+            Console.Write("Enter the number you want: ");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Factorial of {num} is: {getFactorial(num)}");
             #endregion
         }
 
@@ -131,31 +137,43 @@ namespace Assignment
         #endregion
 
         #region Q6
-        static int[] getMinMax(int[] numbers)
+        //static int[] getMinMax(int[] numbers)
+        //{
+        //    int min = 0;
+        //    int max = 0;
+        //    for (int i = 0; i < numbers.Length; i++)
+        //    {
+        //        if (i == 0)
+        //        {
+        //            min = numbers[i];
+        //            max = numbers[i];
+        //        }
+        //        else
+        //        {
+        //            if (numbers[i] < min)
+        //            {
+        //                min = numbers[i];
+        //            }
+        //            if (numbers[i] > max)
+        //            {
+        //                max = numbers[i];
+        //            }
+        //        }
+        //    }
+        //    return new int[] { min, max };
+        //}
+        #endregion
+
+        #region Q7
+        static int getFactorial(int num)
         {
-            int min = 0;
-            int max = 0;
-            for (int i = 0; i < numbers.Length; i++)
+            int result = 1;
+            for (int i = 0; i < num; i++)
             {
-                if (i == 0)
-                {
-                    min = numbers[i];
-                    max = numbers[i];
-                }
-                else
-                {
-                    if (numbers[i] < min)
-                    {
-                        min = numbers[i];
-                    }
-                    if (numbers[i] > max)
-                    {
-                        max = numbers[i];
-                    }
-                }
+                result = result * (i + 1);
             }
-            return new int[] { min, max };
+            return result;
         }
         #endregion
-        }
+    }
 }

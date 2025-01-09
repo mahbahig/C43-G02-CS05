@@ -43,9 +43,15 @@
             #endregion
 
             #region Q4
+            //Console.Write("Enter a number: ");
+            //int num = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Sum of digits: {addDigits(num)}");
+            #endregion
+
+            #region Q5
             Console.Write("Enter a number: ");
             int num = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Sum of digits: {addDigits(num)}");
+            Console.WriteLine($"Is prime: {IsPrime(num)}");
             #endregion
         }
 
@@ -85,15 +91,31 @@
         #endregion
 
         #region Q4
-        static int addDigits(int num)
+        //static int addDigits(int num)
+        //{
+        //    string word = num.ToString();
+        //    int sum = 0;
+        //    for (int i = 0; i < word.Length; i++)
+        //    {
+        //        sum += int.Parse(word[i].ToString());
+        //    }
+        //    return sum;
+        //}
+        #endregion
+
+        #region Q5
+        static bool IsPrime(int num)
         {
-            string word = num.ToString();
-            int sum = 0;
-            for (int i = 0; i < word.Length; i++)
+            if (num < 2)
             {
-                sum += int.Parse(word[i].ToString());
+                return false;
             }
-            return sum;
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
         }
         #endregion
     }

@@ -1,4 +1,6 @@
-﻿namespace Assignment
+﻿using System.Globalization;
+
+namespace Assignment
 {
     //class MyClass
     //{
@@ -49,9 +51,18 @@
             #endregion
 
             #region Q5
-            Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Is prime: {IsPrime(num)}");
+            //Console.Write("Enter a number: ");
+            //int num = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Is prime: {IsPrime(num)}");
+            #endregion
+
+            #region Q6
+            int[] numbers = { 1,8,5,7,3,9,8,7,2 };
+            int[] minMax = getMinMax(numbers);
+
+            Console.WriteLine($"Min: {minMax[0]}");
+            Console.WriteLine($"Max: {minMax[minMax.Length-1]}");
+
             #endregion
         }
 
@@ -104,19 +115,47 @@
         #endregion
 
         #region Q5
-        static bool IsPrime(int num)
+        //static bool IsPrime(int num)
+        //{
+        //    if (num < 2)
+        //    {
+        //        return false;
+        //    }
+        //    for (int i = 2; i <= Math.Sqrt(num); i++)
+        //    {
+        //        if (num % i == 0)
+        //            return false;
+        //    }
+        //    return true;
+        //}
+        #endregion
+
+        #region Q6
+        static int[] getMinMax(int[] numbers)
         {
-            if (num < 2)
+            int min = 0;
+            int max = 0;
+            for (int i = 0; i < numbers.Length; i++)
             {
-                return false;
+                if (i == 0)
+                {
+                    min = numbers[i];
+                    max = numbers[i];
+                }
+                else
+                {
+                    if (numbers[i] < min)
+                    {
+                        min = numbers[i];
+                    }
+                    if (numbers[i] > max)
+                    {
+                        max = numbers[i];
+                    }
+                }
             }
-            for (int i = 2; i <= Math.Sqrt(num); i++)
-            {
-                if (num % i == 0)
-                    return false;
-            }
-            return true;
+            return new int[] { min, max };
         }
         #endregion
-    }
+        }
 }

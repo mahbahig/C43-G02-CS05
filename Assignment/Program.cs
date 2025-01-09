@@ -33,13 +33,19 @@
             #endregion
 
             #region Q3
-            Console.WriteLine("Enter four numbers:");
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int c = int.Parse(Console.ReadLine());
-            int d = int.Parse(Console.ReadLine());
-            var result = addTwoSubstractTwo(a, b, c, d);
-            Console.WriteLine($"Sum: {result.sum} And Difference: {result.diff}");
+            //Console.WriteLine("Enter four numbers:");
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //int c = int.Parse(Console.ReadLine());
+            //int d = int.Parse(Console.ReadLine());
+            //var result = addTwoSubstractTwo(a, b, c, d);
+            //Console.WriteLine($"Sum: {result.sum} And Difference: {result.diff}");
+            #endregion
+
+            #region Q4
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Sum of digits: {addDigits(num)}");
             #endregion
         }
 
@@ -70,11 +76,24 @@
         #endregion
 
         #region Q3
-        static (int sum, int diff) addTwoSubstractTwo(int a, int b, int c, int d)
+        //static (int sum, int diff) addTwoSubstractTwo(int a, int b, int c, int d)
+        //{
+        //    int sum = a + b;
+        //    int diff = c - d;
+        //    return (sum, diff);
+        //}
+        #endregion
+
+        #region Q4
+        static int addDigits(int num)
         {
-            int sum = a + b;
-            int diff = c - d;
-            return (sum, diff);
+            string word = num.ToString();
+            int sum = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                sum += int.Parse(word[i].ToString());
+            }
+            return sum;
         }
         #endregion
     }
